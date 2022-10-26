@@ -42,3 +42,6 @@ with cbook.get_sample_data('grace_hopper.png') as image_file:
 ax[3].imshow(image);
 ax[3].set_title("Image");
 ```
+![Matplotlib](https://github.com/vhendala/imagens/blob/main/matplotilib1.png?raw=true)
+
+
