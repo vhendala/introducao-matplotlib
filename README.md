@@ -1,11 +1,11 @@
 ![Matplotlib](https://github.com/vhendala/imagens/blob/main/matplotilib.png)
 # Introdução ao Matplotlib
 
-- Anotações do Curso de Introdução ao Matplotlib ministrado pelo Prof Felipe na Samsung Ocean
-- É a mais famosa biblioteca para criação, visualização e manipulação de gráficos em Python
+- Anotações do Curso de Introdução ao Matplotlib ministrado pelo Prof Felipe na Samsung Ocean Brasil - Ciência de Dados: Visualização de Dados com Python (Parte 1);
+- Matplotlib é a mais famosa biblioteca para criação, visualização e manipulação de gráficos em Python;
 - É dependente do `numpy` como principal formato de entrada de dados, mas até certo nível, a dependência é quase transparente ao usuário.
 
-## Exemplos
+## Alguns Exemplos
 
 ```python
 import numpy as np
@@ -44,9 +44,9 @@ with cbook.get_sample_data('grace_hopper.png') as image_file:
 ax[3].imshow(image);
 ax[3].set_title("Image");
 ```
-![Matplotlib1](https://github.com/vhendala/imagens/blob/main/matplotilib1.png)
+![Exemplo genérico](https://github.com/vhendala/imagens/blob/main/matplotilib1.png)
 
-### Gráficos 3D
+### Exemplo de Gráficos 3D
 
 ``` python
 from mpl_toolkits.mplot3d import Axes3D
@@ -79,9 +79,9 @@ ax.set_zlim(-1, 1);
 plt.rcParams['figure.figsize'] = [8, 4]
 plt.rcParams['figure.dpi'] = 100 ;
 ```
-![Matplotlib2](https://github.com/vhendala/imagens/blob/main/matplotilib2.png)
+![Exemplo Gráfico 3D](https://github.com/vhendala/imagens/blob/main/matplotilib2.png)
 
-# Um gráfico simples
+# Criando um gráfico simples
 
 - Todo gráfico, em 2D, é um conjunto de pontos (coordenadas) $(x,y)$.
 - Gráfico (plot) dos pontos abaixo.
@@ -94,7 +94,7 @@ plt.rcParams['figure.dpi'] = 100 ;
 | 4 | 7  |
 | 5 | 5  |
 
-### Método simples (um plot)
+### Método simples para realizar um plot
 
 1a. etapa - Importar o numpy e o matplotlib.pyplot (**apenas uma vez por sessão**).
 
@@ -118,7 +118,7 @@ y = [4, 10, 11, 7, 5]
 ``` python
 plt.plot(x, y);
 ```
-![Matplotlib3](https://github.com/vhendala/imagens/blob/main/matplotilib3.png)
+![Gráfico Simples](https://github.com/vhendala/imagens/blob/main/matplotilib3.png)
 
 Um código equivalente seria: 
 
@@ -139,9 +139,9 @@ plt.plot(x, y);
 ``` python
 plt.plot(x, y, 'o:b');
 ```
-![Matplotlib4](https://github.com/vhendala/imagens/blob/main/matplotilib4.png)
+![Gráfico com formatação](https://github.com/vhendala/imagens/blob/main/matplotilib4.png)
 
-### Desafio
+### Primeiro Desafio
 
 Plotar um conjunto de dados (5 elementos quaisquer), sendo que: y é o dobro de x.
 
@@ -155,18 +155,19 @@ x = [1,2,3,4,5]
 y = [2,4,6,8,10]
 plt.plot(x, y, '*--g');
 ```
-![Matplotlib5](https://github.com/vhendala/imagens/blob/main/matplotilib5.png)
+![Primeiro Desafio](https://github.com/vhendala/imagens/blob/main/matplotilib5.png)
 
-#### Resposta
+#### Resposta do Primeiro Desafio
 ``` python
 x = [1,2,3,4,5]
 y = [2,4,6,8,10]
 plt.plot(x, y, '*--g');
 ```
 
-### Operações matemáticas (simples) com Numpy
+### Operações matemáticas simples com Numpy
 
-- O Numpy permitiria resolver o Desafio anterior de maneira mais simples.
+- O Numpy permite resolver o Desafio anterior de maneira mais simples.
+- No exemplo abaixo ocorre um erro.
 
 ``` python
 # Não deve funcionar
@@ -177,23 +178,23 @@ plt.plot(x, x*2, '*--g');
 # x é um `list`. O Python entende operações matemática (exemplo: *2) em `lists`.
 ```
 ![Erro](https://github.com/vhendala/imagens/blob/main/erro.png)
-![Matplotlib6](https://github.com/vhendala/imagens/blob/main/matplotilib6.png)
+![Resposta ao Erro](https://github.com/vhendala/imagens/blob/main/matplotilib6.png)
 
-Solução para operações matemáticas com arrays: Numpy.
+A solução para operações matemáticas com arrays: Numpy.
 
 - Vamos converter x de **list** para **numpy.array**.
-- Isso permitirá fazer operações matemáticas com os elemento do **numpy.array**.
+- Isso permite utilizar operações matemáticas com os elemento do **numpy.array**.
 
 ``` python
 x = np.array([1,2,3,4,5])
 plt.plot(x, x*2, '*--g');
 ```
-![Matplotlib7](https://github.com/vhendala/imagens/blob/main/matplotilib7.png)
+![Utilizando Array](https://github.com/vhendala/imagens/blob/main/matplotilib7.png)
 Documetação do Numpy: https://numpy.org/doc/stable/
 
 ## Explorando o matplotlib.pyplot
 
-### Mais de uma plot na mesma figura
+### Mais de um plot na mesma figura
 
 - Quando fazemos `plt.plot(...)`, duas coisas acontecem por baixo dos panos:
   - Uma figura é criada.
@@ -210,7 +211,7 @@ x = np.array([1,2,3,4,5])
 # plot
 ax.plot(x,3*x);
 ```
-![Matplotlib8](https://github.com/vhendala/imagens/blob/main/matplotilib8.png)
+![Exemplificação](https://github.com/vhendala/imagens/blob/main/matplotilib8.png)
 Mais um plot compartilhando os mesmo eixos:
 
 ``` python
@@ -224,9 +225,9 @@ x = np.array([1,2,3,4,5])
 ax.plot(x,3*x)
 ax.plot(x,x+2);
 ```
-![Matplotlib9.1](https://github.com/vhendala/imagens/blob/main/matplotilib9.1.png)
+![Mais de um plot](https://github.com/vhendala/imagens/blob/main/matplotilib9.1.png)
 
-Melhor adicionar uma legenda...
+Para adicionar uma legenda:
 
 ``` python
 fig = plt.figure() # cria uma figura
@@ -241,9 +242,9 @@ ax.plot(x,x+2, label='y=x+2');
 
 ax.legend();
 ```
-![Matplotlib10](https://github.com/vhendala/imagens/blob/main/matplotilib10.png)
+![Plot com Legenda](https://github.com/vhendala/imagens/blob/main/matplotilib10.png)
 
-#### Podemos adicionar uma grid ao gráfico...
+#### Adicionando uma grid ao gráfico:
 
 ``` python
 fig = plt.figure() # cria uma figura
@@ -260,9 +261,9 @@ ax.legend()
 
 ax.grid(c='r', alpha=0.4, linestyle='--');
 ```
-![Matplotlib11](https://github.com/vhendala/imagens/blob/main/matplotilib11.png)
+![Plot com Grid](https://github.com/vhendala/imagens/blob/main/matplotilib11.png)
 
-Quem sabe um título...
+Adicionando um título ao gráfico:
 ``` python
 fig = plt.figure() # cria uma figura
 ax = plt.axes() # adiciona um eixo na figura
@@ -280,9 +281,9 @@ ax.grid(c='r', alpha=0.4, linestyle='--')
 
 ax.set_title("Um título de teste");
 ```
-![Matplotlib12](https://github.com/vhendala/imagens/blob/main/matplotilib12.png)
+![Gráfico com Título](https://github.com/vhendala/imagens/blob/main/matplotilib12.png)
 
-Um nome para x e y...
+Adicionando nome aos eixos:
 ``` python
 fig = plt.figure() # cria uma figura
 ax = plt.axes() # adiciona um eixo na figura
@@ -303,12 +304,12 @@ plt.title("Um título de teste")
 ax.set_xlabel("Meu eixo x")
 ax.set_ylabel("Meu eixo y");
 ```
-![Matplotlib13](https://github.com/vhendala/imagens/blob/main/matplotilib13.png)
+![Eixos com Nomes](https://github.com/vhendala/imagens/blob/main/matplotilib13.png)
 
 ### Anatomia de uma figura
 ![Anatomia](https://github.com/vhendala/imagens/blob/main/download.webp)
 
-#### Desafio
+#### Segundo Desafio
 
 Faça um gráfico da temperatura média por ano, para as cidades de Manaus, Porto Alegre e São Paulo. 
 
@@ -326,7 +327,7 @@ ano_sao_paulo = [1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 198
 temperatura_sao_paulo = [19.5, 19.1, 19.3, 18.9, 20.5, 19.6, 19.2, 20.0, 19.3, 19.3, 19.7, 20.2, 19.6, 20.1, 19.9, 19.4, 19.2, 20.1, 19.9, 20.3, 20.5, 19.8, 19.7, 20.1, 20.4, 21.2, 20.6, 19.4, 20.0, 20.4, 19.6, 20.0, 20.1, 19.7, 20.5, 20.0, 20.9, 20.9, 20.1, 20.2, 20.2, 20.8]
 ```
 
-#### Resposta
+#### Resposta do Segundo Desafio
 
 ``` python
 # coloque sua resposta aqui
@@ -362,7 +363,7 @@ ax.set_ylabel("Temperatura (${}^{0}C$)");
 ```
 ![Resolução](https://github.com/vhendala/imagens/blob/main/matplotilib15.png)
 
-### Vários plots na mesma figura
+### Adicionando vários plots na mesma figura
 
 ``` python
 import numpy as np
