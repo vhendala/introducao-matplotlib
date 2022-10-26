@@ -156,3 +156,158 @@ y = [2,4,6,8,10]
 plt.plot(x, y, '*--g');
 ```
 ![Matplotlib5](https://github.com/vhendala/imagens/blob/main/matplotilib5.png)
+
+#### Resposta
+``` python
+x = [1,2,3,4,5]
+y = [2,4,6,8,10]
+plt.plot(x, y, '*--g');
+```
+
+### Operações matemáticas (simples) com Numpy
+
+- O Numpy permitiria resolver o Desafio anterior de maneira mais simples.
+
+``` python
+# Não deve funcionar
+
+x = [1,2,3,4,5]
+plt.plot(x, x*2, '*--g');
+
+# x é um `list`. O Python entende operações matemática (exemplo: *2) em `lists`.
+```
+![Erro](https://github.com/vhendala/imagens/blob/main/erro.png)
+![Matplotlib6](https://github.com/vhendala/imagens/blob/main/matplotilib6.png)
+
+Solução para operações matemáticas com arrays: Numpy.
+
+- Vamos converter x de **list** para **numpy.array**.
+- Isso permitirá fazer operações matemáticas com os elemento do **numpy.array**.
+
+``` python
+x = np.array([1,2,3,4,5])
+plt.plot(x, x*2, '*--g');
+```
+![Matplotlib7](https://github.com/vhendala/imagens/blob/main/matplotilib7.png)
+Documetação do Numpy: https://numpy.org/doc/stable/
+
+## Explorando o matplotlib.pyplot
+
+### Mais de uma plot na mesma figura
+
+- Quando fazemos `plt.plot(...)`, duas coisas acontecem por baixo dos panos:
+  - Uma figura é criada.
+  - Um par de eixos (x,y) é criado dentro da figura.
+- Criar a figura e os eixos por conta própria te dá mais liberdade para explorar o pyplot.
+
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# plot
+ax.plot(x,3*x);
+```
+![Matplotlib8](https://github.com/vhendala/imagens/blob/main/matplotilib8.png)
+Mais um plot compartilhando os mesmo eixos:
+
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# 2 plots nos mesmos eixos
+ax.plot(x,3*x)
+ax.plot(x,x+2);
+```
+![Matplotlib9.1](https://github.com/vhendala/imagens/blob/main/matplotilib9.1.png)
+
+Melhor adicionar uma legenda...
+
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# 2 plots nos mesmos eixos
+ax.plot(x,3*x, label='y=3x')
+ax.plot(x,x+2, label='y=x+2');
+
+ax.legend();
+```
+![Matplotlib10](https://github.com/vhendala/imagens/blob/main/matplotilib10.png)
+
+#### Podemos adicionar uma grid ao gráfico...
+
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# 2 plots nos mesmos eixos
+ax.plot(x,3*x, label='y=3x')
+ax.plot(x,x+2, label='y=x+2');
+
+ax.legend()
+
+ax.grid(c='r', alpha=0.4, linestyle='--');
+```
+![Matplotlib11](https://github.com/vhendala/imagens/blob/main/matplotilib11.png)
+
+Quem sabe um título...
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# 2 plots nos mesmos eixos
+ax.plot(x,3*x, label='y=3x')
+ax.plot(x,x+2, label='y=x+2');
+
+ax.legend()
+
+ax.grid(c='r', alpha=0.4, linestyle='--')
+
+ax.set_title("Um título de teste");
+```
+![Matplotlib12](https://github.com/vhendala/imagens/blob/main/matplotilib12.png)
+
+Um nome para x e y...
+``` python
+fig = plt.figure() # cria uma figura
+ax = plt.axes() # adiciona um eixo na figura
+
+# dados
+x = np.array([1,2,3,4,5])
+
+# 2 plots nos mesmos eixos
+ax.plot(x,3*x, label='y=3x')
+ax.plot(x,x+2, label='y=x+2');
+
+ax.legend()
+
+ax.grid(c='r', alpha=0.4, linestyle='--')
+
+plt.title("Um título de teste")
+
+ax.set_xlabel("Meu eixo x")
+ax.set_ylabel("Meu eixo y");
+```
+![Matplotlib13](https://github.com/vhendala/imagens/blob/main/matplotilib13.png)
+
+### Anatomia de uma figura
+![Anatomia](https://github.com/vhendala/imagens/blob/main/download.webp)
+
+
+
+
