@@ -1,4 +1,6 @@
+![Matplotlib](https://github.com/vhendala/imagens/blob/main/matplotilib.png)
 # Introdução ao Matplotlib
+
 - Anotações do Curso de Introdução ao Matplotlib ministrado pelo Prof Felipe na Samsung Ocean
 - É a mais famosa biblioteca para criação, visualização e manipulação de gráficos em Python
 - É dependente do `numpy` como principal formato de entrada de dados, mas até certo nível, a dependência é quase transparente ao usuário.
