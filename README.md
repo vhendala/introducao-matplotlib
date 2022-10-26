@@ -5,6 +5,8 @@
 - É a mais famosa biblioteca para criação, visualização e manipulação de gráficos em Python
 - É dependente do `numpy` como principal formato de entrada de dados, mas até certo nível, a dependência é quase transparente ao usuário.
 
+## Exemplos
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,6 +46,8 @@ ax[3].set_title("Image");
 ```
 ![Matplotlib1](https://github.com/vhendala/imagens/blob/main/matplotilib1.png)
 
+### Gráficos 3D
+
 ``` python
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.tri as mtri
@@ -75,7 +79,6 @@ ax.set_zlim(-1, 1);
 plt.rcParams['figure.figsize'] = [8, 4]
 plt.rcParams['figure.dpi'] = 100 ;
 ```
-
 ![Matplotlib2](https://github.com/vhendala/imagens/blob/main/matplotilib2.png)
 
 # Um gráfico simples
@@ -90,3 +93,66 @@ plt.rcParams['figure.dpi'] = 100 ;
 | 3 | 11 |
 | 4 | 7  |
 | 5 | 5  |
+
+### Método simples (um plot)
+
+1a. etapa - Importar o numpy e o matplotlib.pyplot (**apenas uma vez por sessão**).
+
+- O **NumPy** é um pacote para a linguagem Python que suporta arrays e matrizes multidimensionais. Possibilita a manipulação de dados de máneira eficiente. Os dados são passados ao Matplotlib como arrays do Numpy.
+- O **matplotlib.pyplot** é um conjunto de funções que permite fazer o **Matplotlib** funcionar como o **MATLAB** (software comercial para matemática computacional).
+  - É o método quase padrão para utilizar o **Matplotlib**.
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+2a. etapa - Definir os dados a serem plotados.
+
+``` python
+x = [1, 2, 3, 4, 5]
+y = [4, 10, 11, 7, 5]
+```
+
+3a. etapa - Plotar!
+``` python
+plt.plot(x, y);
+```
+![Matplotlib3](https://github.com/vhendala/imagens/blob/main/matplotilib3.png)
+
+Um código equivalente seria: 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5]
+y = [4, 10, 11, 7, 5]
+plt.plot(x, y);
+```
+
+- O *format* `fmt` é uma maneira conveniente de passar a formatação do plot em uma string.
+
+`format = '[marker][line][color]'`
+
+[matplotlib - docs](https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.plot.html)
+
+``` python
+plt.plot(x, y, 'o:b');
+```
+![Matplotlib4](https://github.com/vhendala/imagens/blob/main/matplotilib4.png)
+
+### Desafio
+
+Plotar um conjunto de dados (5 elementos quaisquer), sendo que: y é o dobro de x.
+
+Os marcadores deverão ser estrelas, as linhas pontilhadas e verdes.
+
+``` python
+# coloque sua resposta aqui
+import numpy as np
+import matplotlib.pyplot as plt
+x = [1,2,3,4,5]
+y = [2,4,6,8,10]
+plt.plot(x, y, '*--g');
+```
+![Matplotlib5](https://github.com/vhendala/imagens/blob/main/matplotilib5.png)
