@@ -396,10 +396,6 @@ Nesse notebook, vamos explorar diferentes formas de visualização, sua aplicaç
 
 ## Principais tipos de visualizações
 
----
-
-
-
 ### Quantidades
 ![Quantidades](https://github.com/vhendala/imagens/blob/main/matplotilib17.png)
 
@@ -407,16 +403,73 @@ Nesse notebook, vamos explorar diferentes formas de visualização, sua aplicaç
 ![Distribuições](https://github.com/vhendala/imagens/blob/main/matplotilib18.png)
 
 ### Proporções
-![Proporções](https://github.com/vhendala/imagens/blob/main/matplotilib20.png)
+![Proporções](https://github.com/vhendala/imagens/blob/main/matplotilib19.png)
 
 ### Relacionamento (x-y)
-![Relacionamento](https://github.com/vhendala/imagens/blob/main/matplotilib21.png)
+![Relacionamento](https://github.com/vhendala/imagens/blob/main/matplotilib20.png)
 
 ### Geoespacial
-![Geoespacial](https://github.com/vhendala/imagens/blob/main/matplotilib22.png)
+![Geoespacial](https://github.com/vhendala/imagens/blob/main/matplotilib21.png)
 
 ### Incerteza
-![Incerteza](https://github.com/vhendala/imagens/blob/main/matplotilib23.png)
+![Incerteza](https://github.com/vhendala/imagens/blob/main/matplotilib22.png)
 
 
+## Dados
+
+Vamos utilizar como fonte de dados, um dataset dristribuído diretamente no Google Colab: `california_housing_data`.
+
+- `longitude`: Uma medida de quanto à norte está a casa. Quanto maior o valor, mais à norte.
+
+- `latitude`:	Uma medida de quanto ao oeste está a casa. Quanto maior o valor, mais ao oeste.
+
+- `housingMedianAge`:	Idade mediana da casa, no mesmo quarteirão.	
+
+- `totalRooms`:	Quantidade de cômodos no mesmo quarteirão.	
+
+- `totalBedrooms`:	Quantidade de quartos no mesmo quarteirão.	
+
+- `population`:	População residente no mesmo quarteirão.
+
+- `households`:	Total de habitantes (um grupo de pessoas morando na mesma casa), por quarteirão.	
+
+- `medianIncome`:	Renda mediana para os habitantes de um mesmo quarteirão, (medidos em dezenas de milhares de dólares).	
+
+- `medianHouseValue`:	Valor mediano das casas no mesmo quarteirão (medido em dólares). **Usualmente, esse é o `target`.**
+
+Referência: Pace, R. Kelley, and Ronald Barry, "Sparse Spatial Autoregressions," Statistics and Probability Letters, Volume 33, Number 3, May 5 1997, p. 291-297.
+
+https://developers.google.com/machine-learning/crash-course/california-housing-data-description
+
+``` python
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+import pandas as pd
+
+california_housing = pd.read_csv('sample_data/california_housing_train.csv')
+
+california_housing
+```
+
+![Tabela](https://github.com/vhendala/imagens/blob/main/matplotilib23.png)
+
+
+Para traduzir o nome das colunas, fazemos:
+
+``` python
+california_housing.rename(columns={
+    "housing_median_age": "idade_mediana", 
+    "total_rooms": "total_de_comodos",
+    "total_bedrooms": "total_de_quartos",
+    "population": "populacao",
+    "households": "residentes",
+    "median_income": "renda_mediana",
+    "median_house_value": "valor_mediano",
+    }, inplace=True)
+ california_housing.describe()
+```
+
+![Traduzida](https://github.com/vhendala/imagens/blob/main/matplotilib24.png)
 
