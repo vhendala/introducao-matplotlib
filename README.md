@@ -386,6 +386,37 @@ ax[1][0].legend();
 ```
 ![Varios Plots](https://github.com/vhendala/imagens/blob/main/matplotilib16.png)
 
+# Explorando o Visualizações com o Matplotlib
+
+Até agora vimos como a vizualização de dados pode ser interessante para nos ajudar a:
+- entender a estrutura interna dos dados que estamos trabalhando.
+- tirar insights sobre possíveis padrões escondidos.
+
+Nesse notebook, vamos explorar diferentes formas de visualização, sua aplicações e exemplos.
+
+## Principais tipos de visualizações
+
+---
+
+
+
+### Quantidades
+![Quantidades](https://github.com/vhendala/imagens/blob/main/matplotilib17.png)
+
+### Distribuições
+![Distribuições](https://github.com/vhendala/imagens/blob/main/matplotilib18.png)
+
+### Proporções
+![Proporções](https://github.com/vhendala/imagens/blob/main/matplotilib20.png)
+
+### Relacionamento (x-y)
+![Relacionamento](https://github.com/vhendala/imagens/blob/main/matplotilib21.png)
+
+### Geoespacial
+![Geoespacial](https://github.com/vhendala/imagens/blob/main/matplotilib22.png)
+
+### Incerteza
+![Incerteza](https://github.com/vhendala/imagens/blob/main/matplotilib23.png)
 
 
 
